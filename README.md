@@ -10,3 +10,7 @@ Para construir la aplicación, basta con la ejecución del siguiente comando:
 Una vez iniciada la aplicación, se debe exponer la misma creando una ruta para ella, ya sea con la interfaz web o con el siguiente comando:
 
 `oc expose svc/todoapp`
+
+Podemos obtener la ruta vía linea de comandos con 
+
+`echo "http://$(oc get route todoapp -o jsonpath='{.spec.host}{"\n"}')/todoapp/TodoServlet"`
